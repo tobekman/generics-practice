@@ -17,6 +17,9 @@ public class Main {
         Team<FootballPlayer> mff = new Team<>("Malmö FF");
         Team<FootballPlayer> dif = new Team<>("Djurgårdens IF");
         Team<HockeyPlayer> fbk = new Team<>("Färjestad BK");
+        Team<HockeyPlayer> vxj = new Team<>("Växjö Lakers");
+        Team<HockeyPlayer> fhc = new Team<>("Frölunda HC");
+        Team<HockeyPlayer> bif = new Team<>("Brynäs IF");
 
         League<Team<FootballPlayer>> allsvenskan = new League<>("Allsvenskan");
         League<Team<HockeyPlayer>> shl = new League<>("Swedish Hockey League");
@@ -25,7 +28,11 @@ public class Main {
         allsvenskan.addTeam(aik);
         allsvenskan.addTeam(mff);
         allsvenskan.addTeam(dif);
+
         shl.addTeam(fbk);
+        shl.addTeam(vxj);
+        shl.addTeam(fhc);
+        shl.addTeam(bif);
 
         ifkGbg.matchResult(aik, randomScore(), randomScore());
         ifkGbg.matchResult(mff, randomScore(), randomScore());
@@ -34,7 +41,15 @@ public class Main {
         aik.matchResult(dif, randomScore(), randomScore());
         mff.matchResult(dif, randomScore(), randomScore());
 
+        fbk.matchResult(vxj, randomScore(), randomScore());
+        fbk.matchResult(fhc, randomScore(), randomScore());
+        fbk.matchResult(bif, randomScore(), randomScore());
+        vxj.matchResult(fhc, randomScore(), randomScore());
+        vxj.matchResult(bif, randomScore(), randomScore());
+        fhc.matchResult(bif, randomScore(), randomScore());
+
         System.out.println(allsvenskan);
+        System.out.println(shl);
 
     }
 

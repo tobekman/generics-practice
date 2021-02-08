@@ -17,7 +17,7 @@ public class League<T extends Team> {
 
     private String setLeagueTable() {
         sortTeamsByPoints();
-        String table = "--- "+name+" ---";
+        String table = "\n--- "+name+" ---";
         for (T team : leagueTable) {
             table += "\n" + team.getName() + " " +
                     team.played + " " +
